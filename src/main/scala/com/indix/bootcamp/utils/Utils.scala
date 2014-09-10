@@ -10,4 +10,10 @@ object Utils {
     }
   }
 
+  def cleanPrice(priceText: String) : Double = {
+    if(priceText.nonEmpty){
+      priceText.filter(each => each >= '0' && each <= '9').toDouble
+    }else{ 0 }
+  }
+
 }
