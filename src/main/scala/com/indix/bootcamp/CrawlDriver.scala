@@ -1,10 +1,11 @@
 package com.indix.bootcamp
 
-import edu.uci.ics.crawler4j.crawler.{CrawlConfig, CrawlController}
-import edu.uci.ics.crawler4j.robotstxt.{RobotstxtConfig, RobotstxtServer}
-import edu.uci.ics.crawler4j.fetcher.PageFetcher
-import com.indix.bootcamp.crawler.FlipkartCrawler
 import java.io.File
+
+import com.indix.bootcamp.crawler.JabongCrawler
+import edu.uci.ics.crawler4j.crawler.{CrawlConfig, CrawlController}
+import edu.uci.ics.crawler4j.fetcher.PageFetcher
+import edu.uci.ics.crawler4j.robotstxt.{RobotstxtConfig, RobotstxtServer}
 
 object CrawlDriver extends App {
   val crawlStorageFolder = "/tmp/crawler4j-scala/data"
@@ -46,6 +47,6 @@ object CrawlDriver extends App {
    * Start the crawl. This is a blocking operation, meaning that your code
    * will reach the line after this only when crawling is finished.
    */
-  controller.start(classOf[FlipkartCrawler], numberOfCrawlers)
+  controller.start(classOf[JabongCrawler], numberOfCrawlers)
 
 }
